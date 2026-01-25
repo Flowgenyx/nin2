@@ -1,32 +1,10 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
-
-const projects = [
-  {
-    id: '01',
-    title: 'The Void House',
-    location: 'Kyoto, Japan',
-    description: 'A minimal concrete residence focused on negative space and light manipulation. Designed for deep meditation and silence amidst the urban chaos.',
-    image: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp'
-  },
-  {
-    id: '02',
-    title: 'Moss Bunker',
-    location: 'Berlin, Germany',
-    description: 'Adaptive reuse of a WWII bunker into a sustainable vertical farm and living space. A brutalist icon reclaimed by nature.',
-    image: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/952269bf-60f5-48dc-afce-13953bead1eb_1600w.webp'
-  },
-  {
-    id: '03',
-    title: 'Sky Cliff',
-    location: 'Reykjavik, Iceland',
-    description: 'A glass and steel structure cantilevered over the volcanic landscape. Blending immediate danger with uncompromising luxury.',
-    image: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/aa5ed4de-1a7e-4bb7-b0ea-1a4c511663df_1600w.webp'
-  }
-];
+import { projects } from '@/lib/projects';
 
 export function CardStack() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -118,12 +96,12 @@ export function CardStack() {
                   <p className="text-sm font-light text-gray-400 leading-relaxed mb-8">
                     {project.description}
                   </p>
-                  <a
-                    href="#"
+                  <Link
+                    href={`/projects/${project.slug}`}
                     className="inline-flex items-center gap-2 text-xs uppercase tracking-widest hover:text-white/70 transition-colors"
                   >
                     View Case Study <ArrowUpRight className="w-3 h-3" />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="relative h-full overflow-hidden order-first md:order-last">
