@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
 
@@ -41,15 +40,29 @@ export function CardStack() {
       if (nextCard) {
         const cardInner = card.querySelector('.card-inner');
 
+        // Scale animatie op de card
         gsap.to(cardInner, {
           scale: 0.92,
-          filter: "brightness(0.6)",
+          ease: "none",
+          force3D: true,
+          scrollTrigger: {
+            trigger: nextCard,
+            start: "top bottom",
+            end: "top 10vh",
+            scrub: 1.5
+          }
+        });
+
+        // Dim effect via overlay (voorkomt foto flikkering)
+        const dimOverlay = card.querySelector('.card-dim-overlay');
+        gsap.to(dimOverlay, {
+          opacity: 0.4,
           ease: "none",
           scrollTrigger: {
             trigger: nextCard,
             start: "top bottom",
             end: "top 10vh",
-            scrub: true
+            scrub: 1.5
           }
         });
       }
@@ -86,6 +99,8 @@ export function CardStack() {
             className="card-item group"
           >
             <div className="card-inner">
+              {/* Dim overlay voor scroll effect */}
+              <div className="card-dim-overlay absolute inset-0 bg-black opacity-0 z-20 pointer-events-none" />
               <div className="p-8 md:p-16 flex flex-col justify-between relative z-10 bg-[#0A0A0A]">
                 <div>
                   <div className="font-display text-4xl text-white/10 mb-6">
@@ -112,11 +127,11 @@ export function CardStack() {
                 </div>
               </div>
               <div className="relative h-full overflow-hidden order-first md:order-last">
-                <Image
+                <img
                   src={project.image}
                   alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-black/10" />
               </div>
