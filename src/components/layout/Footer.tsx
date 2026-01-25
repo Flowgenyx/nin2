@@ -40,7 +40,7 @@ export function Footer() {
 
       <div ref={contentRef} className="relative z-10 text-center w-full px-4">
         <div className="text-xs uppercase tracking-[0.3em] mb-8 text-gray-500 font-semibold">
-          Start a Project
+          Start een Project
         </div>
 
         <Link
@@ -48,16 +48,16 @@ export function Footer() {
           className="group block w-fit mx-auto relative overflow-hidden"
         >
           <span className="font-display text-[12vw] leading-[0.85] tracking-tighter block transition-transform duration-500 group-hover:-translate-y-full">
-            LET&apos;S TALK
+            NEEM CONTACT OP
           </span>
           <span className="font-display text-[12vw] leading-[0.85] tracking-tighter block absolute top-0 left-0 translate-y-full transition-transform duration-500 group-hover:translate-y-0 text-gray-500">
-            LET&apos;S TALK
+            NEEM CONTACT OP
           </span>
         </Link>
 
         <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-[1400px] mx-auto mt-24 px-6 md:px-12">
           <div className="text-[10px] uppercase tracking-widest text-gray-600 mb-6 md:mb-0">
-            &copy; 2025 Flowgenyx<br />All Rights Reserved
+            &copy; 2025 Flowgenyx<br />Alle Rechten Voorbehouden
           </div>
 
           <div className="flex gap-12 text-xs uppercase tracking-[0.2em] font-medium text-gray-400">

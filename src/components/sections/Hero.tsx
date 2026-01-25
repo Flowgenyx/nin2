@@ -62,7 +62,7 @@ export function Hero() {
               ref={el => { if (el) textRefs.current[0] = el; }}
               className="block translate-y-full"
             >
-              CONCRETE
+              CREATIEVE
             </span>
           </h1>
           <h1 className="font-display text-[13vw] leading-[0.85] font-semibold tracking-tighter overflow-hidden">
@@ -70,7 +70,7 @@ export function Hero() {
               ref={el => { if (el) textRefs.current[1] = el; }}
               className="block translate-y-full"
             >
-              DREAMS
+              VISIE
             </span>
           </h1>
         </div>
@@ -80,11 +80,11 @@ export function Hero() {
           className="mt-12 flex justify-between items-end w-full max-w-[90vw] mx-auto opacity-0"
         >
           <div className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-left">
-            Based in<br />Tokyo / London
+            Gevestigd in<br />Amsterdam
           </div>
           <div className="hidden md:block h-px w-24 bg-white/50" />
           <div className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-right">
-            Scroll to<br />Explore
+            Scroll om te<br />Ontdekken
           </div>
         </div>
       </div>

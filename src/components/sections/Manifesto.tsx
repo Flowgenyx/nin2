@@ -48,7 +48,7 @@ export function Manifesto() {
           ref={headingRef}
           className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tighter text-[var(--c-dark)]"
         >
-          Structure as living sculpture.
+          Structuur als levende sculptuur.
         </h2>
       </div>
       <div className="md:col-span-5 md:pt-4">
@@ -56,20 +56,20 @@ export function Manifesto() {
           ref={textRef}
           className="text-lg md:text-xl font-light leading-relaxed text-gray-700 text-balance"
         >
-          We believe that architecture is frozen music. Our studio specializes in brutalist forms softened by biophilic integration. We create spaces that do not just shelter, but inspire, provoking a dialogue between the built environment and the natural world.
+          Wij geloven dat architectuur bevroren muziek is. Onze studio specialiseert zich in brutalistische vormen verzacht door biofiele integratie. Wij creëren ruimtes die niet alleen beschutten, maar inspireren en een dialoog uitlokken tussen de gebouwde omgeving en de natuurlijke wereld.
         </div>
 
         <div className="mt-12 pt-8 border-t border-black/10 flex flex-col gap-4">
           <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
-            <span>Architecture</span>
+            <span>Architectuur</span>
             <span>01</span>
           </div>
           <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
-            <span>Interior</span>
+            <span>Interieur</span>
             <span>02</span>
           </div>
           <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
-            <span>Sustainability</span>
+            <span>Duurzaamheid</span>
             <span>03</span>
           </div>
         </div>

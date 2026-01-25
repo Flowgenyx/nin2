@@ -5,10 +5,10 @@ import { Hexagon, Sun, Mountain, Infinity } from 'lucide-react';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
 
 const icons = [
-  { Icon: Hexagon, label: 'Form' },
-  { Icon: Sun, label: 'Light' },
-  { Icon: Mountain, label: 'Material' },
-  { Icon: Infinity, label: 'Time' }
+  { Icon: Hexagon, label: 'Vorm' },
+  { Icon: Sun, label: 'Licht' },
+  { Icon: Mountain, label: 'Materiaal' },
+  { Icon: Infinity, label: 'Tijd' }
 ];
 
 export function Philosophy() {
@@ -54,13 +54,13 @@ export function Philosophy() {
         ref={headingRef}
         className="font-display text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-8"
       >
-        Designing for Eternity
+        Ontwerpen voor de Eeuwigheid
       </h2>
       <div
         ref={textRef}
         className="max-w-2xl text-gray-600 font-light text-lg md:text-xl leading-relaxed mb-16 text-balance"
       >
-        Our philosophy is rooted in the belief that buildings should age, not deteriorate. We use materials that develop a patina, recording the passage of time on their surface.
+        Onze filosofie is geworteld in de overtuiging dat gebouwen moeten verouderen, niet verslechteren. Wij gebruiken materialen die een patina ontwikkelen en zo de passage van tijd op hun oppervlak vastleggen.
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-20 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">

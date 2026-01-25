@@ -15,13 +15,13 @@ export function Navigation() {
 
       <div className="hidden md:flex gap-8 text-[11px] font-medium uppercase tracking-[0.2em] pointer-events-auto">
         <Link href="#" className="hover:text-white/70 transition-colors duration-300">
-          Projects
+          Projecten
         </Link>
         <Link href="#" className="hover:text-white/70 transition-colors duration-300">
           Studio
         </Link>
         <Link href="#" className="hover:text-white/70 transition-colors duration-300">
-          Journal
+          Blog
         </Link>
         <Link href="#" className="hover:text-white/70 transition-colors duration-300">
           Contact

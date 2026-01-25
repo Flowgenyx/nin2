@@ -56,10 +56,10 @@ export function CardStack() {
       <div className="px-6 md:px-12 mb-20 flex justify-between items-end max-w-[1600px] mx-auto">
         <div>
           <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-4">
-            Selected Works
+            Geselecteerde Werken
           </span>
           <h2 className="font-display text-4xl md:text-6xl tracking-tighter">
-            Recent Projects
+            Recente Projecten
           </h2>
         </div>
         <div className="hidden md:block text-right">
@@ -100,7 +100,7 @@ export function CardStack() {
                     href={`/projects/${project.slug}`}
                     className="inline-flex items-center gap-2 text-xs uppercase tracking-widest hover:text-white/70 transition-colors"
                   >
-                    View Case Study <ArrowUpRight className="w-3 h-3" />
+                    Bekijk Project <ArrowUpRight className="w-3 h-3" />
                   </Link>
                 </div>
               </div>

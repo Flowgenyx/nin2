@@ -117,15 +117,15 @@ export default function CaseStudyPage() {
             <div className="md:col-span-5">
               <div className="sticky top-24">
                 <h3 className="font-display text-xs uppercase tracking-[0.2em] text-gray-400 mb-8">
-                  Project Details
+                  Projectgegevens
                 </h3>
                 <div className="space-y-6">
                   <div className="flex justify-between py-4 border-b border-black/10">
-                    <span className="text-sm uppercase tracking-widest text-gray-500">Client</span>
+                    <span className="text-sm uppercase tracking-widest text-gray-500">Opdrachtgever</span>
                     <span className="text-sm font-medium">{project.details.client}</span>
                   </div>
                   <div className="flex justify-between py-4 border-b border-black/10">
-                    <span className="text-sm uppercase tracking-widest text-gray-500">Area</span>
+                    <span className="text-sm uppercase tracking-widest text-gray-500">Oppervlakte</span>
                     <span className="text-sm font-medium">{project.details.area}</span>
                   </div>
                   <div className="flex justify-between py-4 border-b border-black/10">
@@ -133,7 +133,7 @@ export default function CaseStudyPage() {
                     <span className="text-sm font-medium">{project.details.status}</span>
                   </div>
                   <div className="flex justify-between py-4 border-b border-black/10">
-                    <span className="text-sm uppercase tracking-widest text-gray-500">Year</span>
+                    <span className="text-sm uppercase tracking-widest text-gray-500">Jaar</span>
                     <span className="text-sm font-medium">{project.year}</span>
                   </div>
                 </div>
@@ -170,7 +170,7 @@ export default function CaseStudyPage() {
               >
                 <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-400 mb-4">
                   <ArrowLeft className="w-4 h-4 group-hover:-translate-x-2 transition-transform" />
-                  Previous
+                  Vorige
                 </div>
                 <h3 className="font-display text-xl md:text-2xl tracking-tighter">
                   {prevProject?.title}
@@ -183,7 +183,7 @@ export default function CaseStudyPage() {
                 className="group p-8 md:p-16 text-right hover:bg-black/5 transition-colors"
               >
                 <div className="flex items-center justify-end gap-3 text-xs uppercase tracking-widest text-gray-400 mb-4">
-                  Next
+                  Volgende
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                 </div>
                 <h3 className="font-display text-xl md:text-2xl tracking-tighter">
@@ -201,7 +201,7 @@ export default function CaseStudyPage() {
             className="inline-flex items-center gap-3 text-xs uppercase tracking-widest hover:opacity-70 transition-opacity"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to All Projects
+            Terug naar Alle Projecten
           </Link>
         </section>
       </main>

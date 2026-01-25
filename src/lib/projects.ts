@@ -22,39 +22,39 @@ export const projects: Project[] = [
     title: 'The Void House',
     location: 'Kyoto, Japan',
     year: '2024',
-    description: 'A minimal concrete residence focused on negative space and light manipulation. Designed for deep meditation and silence amidst the urban chaos.',
-    fullDescription: `The Void House represents our most ambitious exploration of negative space as architectural medium. Located in the historic Higashiyama district of Kyoto, this residence was conceived as a sanctuary—a place where the absence of form becomes the primary experience.
+    description: 'Een minimalistische betonnen woning gericht op negatieve ruimte en lichtmanipulatie. Ontworpen voor diepe meditatie en stilte te midden van de stedelijke chaos.',
+    fullDescription: `The Void House vertegenwoordigt onze meest ambitieuze verkenning van negatieve ruimte als architectonisch medium. Gelegen in de historische wijk Higashiyama in Kyoto, werd deze woning ontworpen als een toevluchtsoord—een plek waar de afwezigheid van vorm de primaire ervaring wordt.
 
-The structure is organized around a central void, a triple-height atrium that draws natural light deep into the building while creating a vertical connection between all living spaces. Raw concrete walls, left untreated, display the subtle textures of their wooden formwork, creating a dialogue between the industrial and the organic.
+De structuur is georganiseerd rond een centrale leegte, een drievoudige atrium dat natuurlijk licht diep in het gebouw trekt terwijl het een verticale verbinding creëert tussen alle leefruimtes. Rauwe betonnen muren, onbehandeld gelaten, tonen de subtiele texturen van hun houten bekisting en creëren een dialoog tussen het industriële en het organische.
 
-Each room opens onto carefully framed views of either the internal void or small private gardens, ensuring that nature remains a constant presence. The interplay of shadow and light throughout the day transforms the interior spaces, creating an ever-changing atmosphere that responds to the rhythm of the sun.
+Elke kamer opent naar zorgvuldig omkaderde uitzichten op ofwel de interne leegte of kleine privétuinen, waardoor de natuur een constante aanwezigheid blijft. Het samenspel van schaduw en licht gedurende de dag transformeert de binnenruimtes en creëert een steeds veranderende sfeer die reageert op het ritme van de zon.
 
-The client, a practitioner of Zen meditation, requested a home that would support contemplative living. Every design decision—from the placement of windows to the proportions of corridors—was made with this intention in mind.`,
+De opdrachtgever, een beoefenaar van Zen-meditatie, vroeg om een huis dat contemplatief leven zou ondersteunen. Elke ontwerpbeslissing—van de plaatsing van ramen tot de proporties van gangen—werd met deze intentie gemaakt.`,
     image: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
     gallery: [
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/482e7b6a-168c-4d0d-b35d-0e2ff4014577_3840w.webp',
     ],
     details: {
-      client: 'Private Residence',
+      client: 'Privéwoning',
       area: '320 m²',
-      status: 'Completed'
+      status: 'Voltooid'
     }
   },
   {
     id: '02',
     slug: 'moss-bunker',
     title: 'Moss Bunker',
-    location: 'Berlin, Germany',
+    location: 'Berlijn, Duitsland',
     year: '2023',
-    description: 'Adaptive reuse of a WWII bunker into a sustainable vertical farm and living space. A brutalist icon reclaimed by nature.',
-    fullDescription: `Moss Bunker is a radical intervention in Berlin's industrial heritage. This World War II anti-aircraft bunker, long abandoned and scheduled for demolition, has been transformed into a living monument to sustainable urban development.
+    description: 'Herbestemming van een WOII-bunker tot een duurzame verticale boerderij en woonruimte. Een brutalistisch icoon heroverd door de natuur.',
+    fullDescription: `Moss Bunker is een radicale interventie in het industriële erfgoed van Berlijn. Deze luchtafweerbunker uit de Tweede Wereldoorlog, lang verlaten en gepland voor sloop, is getransformeerd tot een levend monument voor duurzame stedelijke ontwikkeling.
 
-The project maintains the bunker's imposing concrete shell while carving new apertures that bring light and air into the formerly hermetic structure. The building now houses a three-story vertical farm that produces fresh vegetables year-round for the surrounding neighborhood, alongside four residential units and a public café at ground level.
+Het project behoudt de imposante betonnen schil van de bunker terwijl nieuwe openingen worden gemaakt die licht en lucht in de voorheen hermetische structuur brengen. Het gebouw huisvest nu een verticale boerderij van drie verdiepingen die het hele jaar door verse groenten produceert voor de omliggende buurt, naast vier wooneenheden en een openbaar café op de begane grond.
 
-The exterior walls have been left to weather naturally, with strategic plantings of moss and climbing plants softening the brutalist facade over time. Solar panels and a rainwater harvesting system make the building nearly energy-neutral, while the thermal mass of the original concrete structure provides natural temperature regulation.
+De buitenmuren zijn natuurlijk verweerd gelaten, met strategische beplanting van mos en klimplanten die de brutalistische gevel na verloop van tijd verzachten. Zonnepanelen en een regenwater opvangsysteem maken het gebouw bijna energieneutraal, terwijl de thermische massa van de originele betonnen structuur zorgt voor natuurlijke temperatuurregulatie.
 
-This project demonstrates our belief that the most sustainable building is often one that already exists. By reimagining rather than replacing, we've created a space that honors history while pointing toward a more ecological future.`,
+Dit project demonstreert onze overtuiging dat het meest duurzame gebouw vaak al bestaat. Door te herdenken in plaats van te vervangen, hebben we een ruimte gecreëerd die de geschiedenis eert terwijl ze wijst naar een meer ecologische toekomst.`,
     image: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/952269bf-60f5-48dc-afce-13953bead1eb_1600w.webp',
     gallery: [
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/952269bf-60f5-48dc-afce-13953bead1eb_1600w.webp',
@@ -62,33 +62,33 @@ This project demonstrates our belief that the most sustainable building is often
     ],
     details: {
       client: 'Urban Collective Berlin',
-      area: '2,400 m²',
-      status: 'Completed'
+      area: '2.400 m²',
+      status: 'Voltooid'
     }
   },
   {
     id: '03',
     slug: 'sky-cliff',
     title: 'Sky Cliff',
-    location: 'Reykjavik, Iceland',
+    location: 'Reykjavik, IJsland',
     year: '2024',
-    description: 'A glass and steel structure cantilevered over the volcanic landscape. Blending immediate danger with uncompromising luxury.',
-    fullDescription: `Sky Cliff exists at the intersection of danger and beauty. Perched on the edge of an ancient lava field outside Reykjavik, this private residence cantilevers dramatically over a 40-meter cliff face, offering unobstructed views of the North Atlantic and the distant Snæfellsnes peninsula.
+    description: 'Een glas- en staalconstructie uitstekend boven het vulkanische landschap. Een samensmelting van direct gevaar met compromisloze luxe.',
+    fullDescription: `Sky Cliff bestaat op het snijvlak van gevaar en schoonheid. Gelegen op de rand van een oud lavazand buiten Reykjavik, steekt deze privéwoning spectaculair uit over een 40 meter hoge klif, met onbelemmerd uitzicht op de Noord-Atlantische Oceaan en het verre schiereiland Snæfellsnes.
 
-The structure is an exercise in engineering audacity. A steel frame extends 12 meters beyond the cliff edge, supporting a glazed living pavilion that appears to float above the volcanic landscape. The sensation of suspension is heightened by a glass floor section in the main living area, allowing residents to look directly down at the churning waves below.
+De structuur is een oefening in technische durf. Een stalen frame strekt zich 12 meter voorbij de rand van de klif uit en ondersteunt een glazen woonpaviljoen dat lijkt te zweven boven het vulkanische landschap. Het gevoel van suspensie wordt versterkt door een glazen vloersectie in de hoofdwoonruimte, waardoor bewoners direct naar beneden kunnen kijken naar de kolkende golven.
 
-Despite its dramatic appearance, the house was designed with extreme weather conditions in mind. Triple-glazed panels, geothermal heating, and a turf-covered rear section that blends into the hillside all contribute to the building's resilience against Iceland's fierce winters.
+Ondanks zijn dramatische uiterlijk werd het huis ontworpen met extreme weersomstandigheden in gedachten. Drievoudig beglaasde panelen, geothermische verwarming en een met gras bedekt achterste gedeelte dat opgaat in de helling dragen allemaal bij aan de weerbaarheid van het gebouw tegen de felle IJslandse winters.
 
-The interior palette draws from the surrounding landscape: black basalt floors, birch wood ceilings, and wool textiles in muted earth tones. The result is a space that feels both cosmopolitan and deeply rooted in its extraordinary site.`,
+Het interieurpalet is ontleend aan het omringende landschap: zwarte basaltvloeren, berkenhouten plafonds en wollen textiel in gedempte aardetinten. Het resultaat is een ruimte die zowel kosmopolitisch aanvoelt als diep geworteld in zijn buitengewone locatie.`,
     image: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/aa5ed4de-1a7e-4bb7-b0ea-1a4c511663df_1600w.webp',
     gallery: [
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/aa5ed4de-1a7e-4bb7-b0ea-1a4c511663df_1600w.webp',
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/482e7b6a-168c-4d0d-b35d-0e2ff4014577_3840w.webp',
     ],
     details: {
-      client: 'Private Residence',
+      client: 'Privéwoning',
       area: '480 m²',
-      status: 'Completed'
+      status: 'Voltooid'
     }
   }
 ];
@@ -100,7 +100,7 @@ export function getProjectBySlug(slug: string): Project | undefined {
 export function getNextProject(currentSlug: string): Project | undefined {
   const currentIndex = projects.findIndex(p => p.slug === currentSlug);
   if (currentIndex === -1 || currentIndex === projects.length - 1) {
-    return projects[0]; // Loop back to first
+    return projects[0];
   }
   return projects[currentIndex + 1];
 }
@@ -108,7 +108,7 @@ export function getNextProject(currentSlug: string): Project | undefined {
 export function getPreviousProject(currentSlug: string): Project | undefined {
   const currentIndex = projects.findIndex(p => p.slug === currentSlug);
   if (currentIndex === -1 || currentIndex === 0) {
-    return projects[projects.length - 1]; // Loop back to last
+    return projects[projects.length - 1];
   }
   return projects[currentIndex - 1];
 }
