@@ -52,13 +52,13 @@ export function Philosophy() {
     >
       <h2
         ref={headingRef}
-        className="font-display text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-8"
+        className="font-display text-2xl md:text-4xl lg:text-5xl tracking-tighter mb-8 max-w-4xl px-4"
       >
         Jouw netwerk bepaalt jouw toekomst
       </h2>
       <div
         ref={textRef}
-        className="max-w-2xl text-gray-600 font-light text-lg md:text-xl leading-relaxed mb-16 text-balance"
+        className="max-w-2xl text-gray-600 font-light text-lg md:text-xl leading-relaxed mb-16 text-balance px-4"
       >
         Bij NIN geloven we dat de juiste connecties deuren openen die anders gesloten blijven. Wij creëren de setting, jij maakt de connecties die jouw carrière en business naar het volgende niveau tillen.
       </div>
