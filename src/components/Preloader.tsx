@@ -48,7 +48,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
   return (
     <div ref={containerRef} className="loader">
       <div ref={textRef} className="font-display text-4xl md:text-6xl font-bold tracking-tighter">
-        FLOWGENYX
+        NIN
       </div>
       <div ref={barRef} className="loader-bar" />
     </div>

@@ -48,7 +48,7 @@ export function Manifesto() {
           ref={headingRef}
           className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tighter text-[var(--c-dark)]"
         >
-          Structuur als levende sculptuur.
+          Waar waardevolle connecties worden gemaakt.
         </h2>
       </div>
       <div className="md:col-span-5 md:pt-4">
@@ -56,20 +56,20 @@ export function Manifesto() {
           ref={textRef}
           className="text-lg md:text-xl font-light leading-relaxed text-gray-700 text-balance"
         >
-          Wij geloven dat architectuur bevroren muziek is. Onze studio specialiseert zich in brutalistische vormen verzacht door biofiele integratie. Wij creëren ruimtes die niet alleen beschutten, maar inspireren en een dialoog uitlokken tussen de gebouwde omgeving en de natuurlijke wereld.
+          NIN brengt ambitieuze ondernemers en professionals samen in een exclusieve setting. Geen oppervlakkig netwerken, maar betekenisvolle gesprekken die leiden tot nieuwe samenwerkingen, inzichten en kansen.
         </div>
 
         <div className="mt-12 pt-8 border-t border-black/10 flex flex-col gap-4">
           <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
-            <span>Architectuur</span>
+            <span>Keynotes</span>
             <span>01</span>
           </div>
           <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
-            <span>Interieur</span>
+            <span>Netwerksessies</span>
             <span>02</span>
           </div>
           <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
-            <span>Duurzaamheid</span>
+            <span>Exclusieve Toegang</span>
             <span>03</span>
           </div>
         </div>

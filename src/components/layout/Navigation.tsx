@@ -10,21 +10,24 @@ export function Navigation() {
         href="/"
         className="font-display font-semibold text-lg tracking-tighter pointer-events-auto cursor-pointer"
       >
-        FLOWGENYX
+        NIN
       </Link>
 
       <div className="hidden md:flex gap-8 text-[11px] font-medium uppercase tracking-[0.2em] pointer-events-auto">
-        <Link href="#" className="hover:text-white/70 transition-colors duration-300">
-          Projecten
+        <Link href="/over" className="hover:text-white/70 transition-colors duration-300">
+          Over
         </Link>
-        <Link href="#" className="hover:text-white/70 transition-colors duration-300">
-          Studio
+        <Link href="/programma" className="hover:text-white/70 transition-colors duration-300">
+          Programma
         </Link>
-        <Link href="#" className="hover:text-white/70 transition-colors duration-300">
-          Blog
+        <Link href="/sprekers" className="hover:text-white/70 transition-colors duration-300">
+          Sprekers
         </Link>
-        <Link href="#" className="hover:text-white/70 transition-colors duration-300">
-          Contact
+        <Link href="/partners" className="hover:text-white/70 transition-colors duration-300">
+          Partners
+        </Link>
+        <Link href="#tickets" className="hover:text-white/70 transition-colors duration-300">
+          Tickets
         </Link>
       </div>
 

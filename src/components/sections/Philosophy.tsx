@@ -5,10 +5,10 @@ import { Hexagon, Sun, Mountain, Infinity } from 'lucide-react';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
 
 const icons = [
-  { Icon: Hexagon, label: 'Vorm' },
-  { Icon: Sun, label: 'Licht' },
-  { Icon: Mountain, label: 'Materiaal' },
-  { Icon: Infinity, label: 'Tijd' }
+  { Icon: Hexagon, label: 'Connecties' },
+  { Icon: Sun, label: 'Inspiratie' },
+  { Icon: Mountain, label: 'Groei' },
+  { Icon: Infinity, label: 'Impact' }
 ];
 
 export function Philosophy() {
@@ -54,13 +54,13 @@ export function Philosophy() {
         ref={headingRef}
         className="font-display text-3xl md:text-5xl lg:text-6xl tracking-tighter mb-8"
       >
-        Ontwerpen voor de Eeuwigheid
+        Jouw netwerk bepaalt jouw toekomst
       </h2>
       <div
         ref={textRef}
         className="max-w-2xl text-gray-600 font-light text-lg md:text-xl leading-relaxed mb-16 text-balance"
       >
-        Onze filosofie is geworteld in de overtuiging dat gebouwen moeten verouderen, niet verslechteren. Wij gebruiken materialen die een patina ontwikkelen en zo de passage van tijd op hun oppervlak vastleggen.
+        Bij NIN geloven we dat de juiste connecties deuren openen die anders gesloten blijven. Wij creëren de setting, jij maakt de connecties die jouw carrière en business naar het volgende niveau tillen.
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-20 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">
