@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from '@/lib/gsap';
+import { useTransition } from '@/context/TransitionContext';
 
 interface PreloaderProps {
   onComplete: () => void;
@@ -12,8 +13,17 @@ export function Preloader({ onComplete }: PreloaderProps) {
   const barRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(true);
+  const { hasNavigated } = useTransition();
 
   useEffect(() => {
+    // Skip preloader if we navigated from another page (not a fresh load)
+    if (hasNavigated) {
+      setIsVisible(false);
+      onComplete();
+      return;
+    }
+
+    // Fresh page load - show preloader
     const tl = gsap.timeline({
       onComplete: () => {
         setIsVisible(false);
@@ -41,7 +51,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
     return () => {
       tl.kill();
     };
-  }, [onComplete]);
+  }, [onComplete, hasNavigated]);
 
   if (!isVisible) return null;
 

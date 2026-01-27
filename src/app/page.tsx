@@ -8,6 +8,7 @@ import { NoiseOverlay } from '@/components/ui/NoiseOverlay';
 import { Preloader } from '@/components/Preloader';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
+import { TransitionWrapper } from '@/components/layout/TransitionWrapper';
 import { Hero } from '@/components/sections/Hero';
 import { Manifesto } from '@/components/sections/Manifesto';
 import { CardStack } from '@/components/sections/CardStack';
@@ -65,7 +66,7 @@ export default function Home() {
   }, [initLenis]);
 
   return (
-    <>
+    <TransitionWrapper>
       <NoiseOverlay />
       <Preloader onComplete={handlePreloaderComplete} />
       <Navigation />
@@ -78,6 +79,6 @@ export default function Home() {
       </div>
 
       <Footer />
-    </>
+    </TransitionWrapper>
   );
 }

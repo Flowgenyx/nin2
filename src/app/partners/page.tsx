@@ -5,6 +5,7 @@ import { gsap, ScrollTrigger } from '@/lib/gsap';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
 import { NoiseOverlay } from '@/components/ui/NoiseOverlay';
+import { TransitionWrapper } from '@/components/layout/TransitionWrapper';
 
 const mainPartners = [
   { name: '[Hoofdpartner 1]', logo: null },
@@ -59,7 +60,7 @@ export default function PartnersPage() {
   }, []);
 
   return (
-    <>
+    <TransitionWrapper>
       <Navigation />
       <main className="wrapper bg-[var(--c-bg)]">
         {/* Hero */}
@@ -133,6 +134,6 @@ export default function PartnersPage() {
       </main>
       <Footer />
       <NoiseOverlay />
-    </>
+    </TransitionWrapper>
   );
 }

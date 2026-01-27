@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Syncopate } from "next/font/google";
+import { TransitionProvider } from "@/context/TransitionContext";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -28,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl" className={`${manrope.variable} ${syncopate.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <TransitionProvider>{children}</TransitionProvider>
+      </body>
     </html>
   );
 }

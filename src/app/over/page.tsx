@@ -5,6 +5,7 @@ import { gsap, ScrollTrigger } from '@/lib/gsap';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
 import { NoiseOverlay } from '@/components/ui/NoiseOverlay';
+import { TransitionWrapper } from '@/components/layout/TransitionWrapper';
 
 export default function OverPage() {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -40,7 +41,7 @@ export default function OverPage() {
   }, []);
 
   return (
-    <>
+    <TransitionWrapper>
       <Navigation />
       <main className="wrapper bg-[var(--c-bg)]">
         {/* Hero */}
@@ -137,6 +138,6 @@ export default function OverPage() {
       </main>
       <Footer />
       <NoiseOverlay />
-    </>
+    </TransitionWrapper>
   );
 }
