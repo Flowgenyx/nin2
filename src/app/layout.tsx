@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import { Manrope, Syncopate } from "next/font/google";
 import "./globals.css";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const syncopate = Syncopate({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "NIN | Network is Networth",
@@ -12,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="nl" className={`${manrope.variable} ${syncopate.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );

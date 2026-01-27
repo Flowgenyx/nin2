@@ -1,22 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&family=Syncopate:wght@400;700&display=swap');
-
 @import "tailwindcss";
 
 @theme inline {
   --color-bg: #E6E4DF;
   --color-dark: #0A0A0A;
   --color-accent: #374336;
-
-  --font-display: 'Syncopate', sans-serif;
-  --font-body: 'Manrope', sans-serif;
 }
 
 :root {
   --c-bg: #E6E4DF;
   --c-dark: #0A0A0A;
   --c-accent: #374336;
-  --font-display: 'Syncopate', sans-serif;
-  --font-body: 'Manrope', sans-serif;
   --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -31,7 +24,7 @@ html {
 body {
   background-color: var(--c-bg);
   color: var(--c-dark);
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   margin: 0;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -60,11 +53,11 @@ body.loaded {
 
 /* Utilities */
 .font-display {
-  font-family: var(--font-display);
+  font-family: var(--font-display), sans-serif;
 }
 
 .font-body {
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
 }
 
 .text-balance {
