@@ -41,36 +41,38 @@ export function Manifesto() {
   return (
     <section
       ref={sectionRef}
-      className="py-32 md:py-48 px-6 md:px-12 max-w-[1600px] mx-auto grid md:grid-cols-12 gap-12 items-start"
+      className="py-32 md:py-48 px-6 md:px-12 max-w-[1600px] mx-auto"
     >
-      <div className="md:col-span-7">
-        <h2
-          ref={headingRef}
-          className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tighter text-[var(--c-dark)]"
-        >
-          Waar waardevolle connecties worden gemaakt.
-        </h2>
-      </div>
-      <div className="md:col-span-5 md:pt-4">
-        <div
-          ref={textRef}
-          className="text-lg md:text-xl font-light leading-relaxed text-gray-700 text-balance"
-        >
-          NIN brengt ambitieuze ondernemers en professionals samen in een exclusieve setting. Geen oppervlakkig netwerken, maar betekenisvolle gesprekken die leiden tot nieuwe samenwerkingen, inzichten en kansen.
+      <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+        <div className="md:col-span-8 lg:col-span-7">
+          <h2
+            ref={headingRef}
+            className="font-display text-3xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tighter text-[var(--c-dark)]"
+          >
+            Waar waardevolle connecties worden gemaakt.
+          </h2>
         </div>
+        <div className="md:col-span-4 lg:col-span-5 md:pt-4">
+          <div
+            ref={textRef}
+            className="text-lg md:text-xl font-light leading-relaxed text-gray-700 text-balance"
+          >
+            NIN brengt ambitieuze ondernemers en professionals samen in een exclusieve setting. Geen oppervlakkig netwerken, maar betekenisvolle gesprekken die leiden tot nieuwe samenwerkingen, inzichten en kansen.
+          </div>
 
-        <div className="mt-12 pt-8 border-t border-black/10 flex flex-col gap-4">
-          <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
-            <span>Keynotes</span>
-            <span>01</span>
-          </div>
-          <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
-            <span>Netwerksessies</span>
-            <span>02</span>
-          </div>
-          <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
-            <span>Exclusieve Toegang</span>
-            <span>03</span>
+          <div className="mt-12 pt-8 border-t border-black/10 flex flex-col gap-4">
+            <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
+              <span>Keynotes</span>
+              <span>01</span>
+            </div>
+            <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
+              <span>Netwerksessies</span>
+              <span>02</span>
+            </div>
+            <div className="flex justify-between text-xs uppercase tracking-[0.15em] font-semibold text-gray-500">
+              <span>Exclusieve Toegang</span>
+              <span>03</span>
+            </div>
           </div>
         </div>
       </div>
