@@ -20,21 +20,28 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
   const router = useRouter();
   const pathname = usePathname();
 
-  // Reset transition state when pathname changes (for browser back/forward)
+  // Entry animation when pathname changes - NO transforms to preserve fixed positioning
   useEffect(() => {
+    const content = contentRef.current;
+    if (!content) return;
+
+    // Always ensure content is visible immediately
+    gsap.set(content, { opacity: 1 });
+
     if (isTransitioning) {
-      // Animate in the new page
+      // Animate in the new page (opacity only - no transforms!)
       gsap.fromTo(
-        contentRef.current,
-        { opacity: 0, y: 30 },
+        content,
+        { opacity: 0 },
         {
           opacity: 1,
-          y: 0,
-          duration: 0.5,
+          duration: 0.4,
           ease: 'power2.out',
           onComplete: () => setIsTransitioning(false),
         }
       );
+    } else {
+      setIsTransitioning(false);
     }
   }, [pathname]);
 
@@ -46,11 +53,10 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
       setIsTransitioning(true);
       setHasNavigated(true);
 
-      // Exit animation
+      // Exit animation - opacity only, no transforms to preserve fixed positioning
       gsap.to(contentRef.current, {
         opacity: 0,
-        y: -30,
-        duration: 0.4,
+        duration: 0.3,
         ease: 'power2.inOut',
         onComplete: () => {
           router.push(href);

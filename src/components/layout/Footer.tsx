@@ -10,18 +10,37 @@ export function Footer() {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    gsap.from(contentRef.current, {
-      y: 150,
-      opacity: 0.5,
-      scrollTrigger: {
-        trigger: '.wrapper',
-        start: 'bottom 100%',
-        end: 'bottom 20%',
-        scrub: true
+    const content = contentRef.current;
+    if (!content) return;
+
+    // Set initial state - content starts slightly down and faded
+    gsap.set(content, { y: 60, opacity: 0.6 });
+
+    // Create scroll animation after a short delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      const wrapper = document.querySelector('.wrapper');
+      if (!wrapper) {
+        // No wrapper, just show footer
+        gsap.set(content, { y: 0, opacity: 1 });
+        return;
       }
-    });
+
+      // Animate footer content as wrapper scrolls away
+      gsap.to(content, {
+        y: 0,
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: wrapper,
+          start: 'bottom bottom',
+          end: 'bottom top',
+          scrub: 0.5,
+        },
+      });
+    }, 200);
 
     return () => {
+      clearTimeout(timer);
       ScrollTrigger.getAll().forEach(st => st.kill());
     };
   }, []);

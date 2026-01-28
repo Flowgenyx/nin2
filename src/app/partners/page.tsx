@@ -60,9 +60,11 @@ export default function PartnersPage() {
   }, []);
 
   return (
-    <TransitionWrapper>
-      <Navigation />
-      <main className="wrapper bg-[var(--c-bg)]">
+    <>
+      <Footer />
+      <TransitionWrapper>
+        <Navigation />
+        <main className="wrapper">
         {/* Hero */}
         <section className="min-h-[50vh] flex items-center justify-center px-6 pt-32 pb-16">
           <div className="text-center max-w-4xl">
@@ -132,8 +134,8 @@ export default function PartnersPage() {
           </a>
         </section>
       </main>
-      <Footer />
-      <NoiseOverlay />
-    </TransitionWrapper>
+        <NoiseOverlay />
+      </TransitionWrapper>
+    </>
   );
 }

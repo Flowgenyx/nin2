@@ -66,19 +66,20 @@ export default function Home() {
   }, [initLenis]);
 
   return (
-    <TransitionWrapper>
-      <NoiseOverlay />
-      <Preloader onComplete={handlePreloaderComplete} />
-      <Navigation />
-
-      <div className="wrapper">
-        <Hero />
-        <Manifesto />
-        <CardStack />
-        <Philosophy />
-      </div>
-
+    <>
       <Footer />
-    </TransitionWrapper>
+      <TransitionWrapper>
+        <NoiseOverlay />
+        <Preloader onComplete={handlePreloaderComplete} />
+        <Navigation />
+
+        <div className="wrapper">
+          <Hero />
+          <Manifesto />
+          <CardStack />
+          <Philosophy />
+        </div>
+      </TransitionWrapper>
+    </>
   );
 }

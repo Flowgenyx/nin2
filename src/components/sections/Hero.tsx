@@ -3,44 +3,58 @@
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { useTransition } from '@/context/TransitionContext';
 
 export function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const textRefs = useRef<HTMLSpanElement[]>([]);
   const fadeRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+  const { isTransitioning } = useTransition();
 
   useEffect(() => {
-    // Hero text animation
-    const heroTl = gsap.timeline();
-    heroTl.to(textRefs.current, {
-      y: 0,
-      stagger: 0.1,
-      duration: 1.8,
-      ease: 'power4.out',
-      delay: 0.2
-    })
-    .to(fadeRef.current, {
-      opacity: 1,
-      duration: 1
-    }, "-=1");
+    // Check en set hasAnimated SYNCHRONOUS om dubbele animatie te voorkomen
+    if (isTransitioning || hasAnimated.current) return;
+    hasAnimated.current = true;
 
-    // Hero parallax
-    gsap.to(imageRef.current, {
-      yPercent: 20,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-      }
+    // Wait for fonts and next frame to ensure proper layout
+    document.fonts.ready.then(() => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // Hero text animation
+          const heroTl = gsap.timeline();
+          heroTl.to(textRefs.current, {
+            y: 0,
+            stagger: 0.1,
+            duration: 1.8,
+            ease: 'power4.out',
+            delay: 0.2
+          })
+          .to(fadeRef.current, {
+            opacity: 1,
+            duration: 1
+          }, "-=1");
+
+          // Hero parallax
+          gsap.to(imageRef.current, {
+            yPercent: 20,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true
+            }
+          });
+        });
+      });
     });
 
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
     };
-  }, []);
+  }, [isTransitioning]);
 
   return (
     <section ref={containerRef} className="h-screen relative flex flex-col items-center justify-center overflow-hidden bg-[var(--c-bg)]">

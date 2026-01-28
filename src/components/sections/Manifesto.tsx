@@ -2,21 +2,37 @@
 
 import { useRef, useEffect } from 'react';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { useTransition } from '@/context/TransitionContext';
 
 export function Manifesto() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+  const { isTransitioning } = useTransition();
 
   useEffect(() => {
-    // Split text into words and animate
-    const splitAndAnimate = (element: HTMLElement | null) => {
-      if (!element) return;
+    // Check en set hasAnimated SYNCHRONOUS om dubbele animatie te voorkomen
+    if (isTransitioning || hasAnimated.current) return;
+    hasAnimated.current = true;
+
+    const elements = [headingRef.current, textRef.current].filter(Boolean) as HTMLElement[];
+    if (elements.length === 0) {
+      hasAnimated.current = false;
+      return;
+    }
+
+    const splitAndAnimate = (element: HTMLElement) => {
+      // Skip als element al gesplit is
+      if (element.querySelector('.word-wrap')) return;
 
       const text = element.innerText;
       element.innerHTML = text.split(' ').map(word =>
-        `<span class="word-wrap"><span class="word-inner">${word}&nbsp;</span></span>`
+        `<span class="word-wrap"><span class="word-inner">${word}</span></span>`
       ).join('');
+
+      // Force layout recalculation
+      void element.offsetHeight;
 
       gsap.to(element.querySelectorAll('.word-inner'), {
         y: "0%",
@@ -30,13 +46,20 @@ export function Manifesto() {
       });
     };
 
-    splitAndAnimate(headingRef.current);
-    splitAndAnimate(textRef.current);
+    // Wait for fonts, then double rAF to ensure paint is complete
+    document.fonts.ready.then(() => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          elements.forEach(el => splitAndAnimate(el));
+          ScrollTrigger.refresh();
+        });
+      });
+    });
 
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
     };
-  }, []);
+  }, [isTransitioning]);
 
   return (
     <section
