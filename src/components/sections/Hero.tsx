@@ -8,35 +8,16 @@ import { useTransition } from '@/context/TransitionContext';
 export function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
-  const textRefs = useRef<HTMLSpanElement[]>([]);
-  const fadeRef = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef(false);
   const { isTransitioning } = useTransition();
 
   useEffect(() => {
-    // Check en set hasAnimated SYNCHRONOUS om dubbele animatie te voorkomen
     if (isTransitioning || hasAnimated.current) return;
     hasAnimated.current = true;
 
-    // Wait for fonts and next frame to ensure proper layout
     document.fonts.ready.then(() => {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          // Hero text animation
-          const heroTl = gsap.timeline();
-          heroTl.to(textRefs.current, {
-            y: 0,
-            stagger: 0.1,
-            duration: 1.8,
-            ease: 'power4.out',
-            delay: 0.2
-          })
-          .to(fadeRef.current, {
-            opacity: 1,
-            duration: 1
-          }, "-=1");
-
-          // Hero parallax
           gsap.to(imageRef.current, {
             yPercent: 20,
             ease: 'none',
@@ -57,51 +38,18 @@ export function Hero() {
   }, [isTransitioning]);
 
   return (
-    <section ref={containerRef} className="h-screen relative flex flex-col items-center justify-center overflow-hidden bg-[var(--c-bg)]">
+    <section ref={containerRef} className="h-screen relative flex flex-col items-end justify-end overflow-hidden bg-[var(--c-bg)]">
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <Image
           ref={imageRef}
-          src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/482e7b6a-168c-4d0d-b35d-0e2ff4014577_3840w.webp"
-          alt="Concrete Architecture"
+          src="/images/hero/hero1.png"
+          alt="NIN Hero"
           fill
-          className="object-cover brightness-[0.8] scale-110"
+          className="object-cover scale-110"
           priority
         />
       </div>
 
-      <div className="relative z-10 text-center text-white mix-blend-difference px-4 w-full">
-        <div className="flex flex-col items-center justify-center gap-2 md:gap-4">
-          <h1 className="font-display text-[13vw] leading-[0.85] font-semibold tracking-tighter overflow-hidden">
-            <span
-              ref={el => { if (el) textRefs.current[0] = el; }}
-              className="block translate-y-full"
-            >
-              NETWORK IS
-            </span>
-          </h1>
-          <h1 className="font-display text-[13vw] leading-[0.85] font-semibold tracking-tighter overflow-hidden">
-            <span
-              ref={el => { if (el) textRefs.current[1] = el; }}
-              className="block translate-y-full"
-            >
-              NETWORTH
-            </span>
-          </h1>
-        </div>
-
-        <div
-          ref={fadeRef}
-          className="mt-12 flex justify-between items-end w-full max-w-[90vw] mx-auto opacity-0"
-        >
-          <div className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-left">
-            [DATUM]<br />[LOCATIE]
-          </div>
-          <div className="hidden md:block h-px w-24 bg-white/50" />
-          <div className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-right">
-            Scroll om te<br />Ontdekken
-          </div>
-        </div>
-      </div>
     </section>
   );
 }

@@ -8,9 +8,10 @@ export function Navigation() {
     <nav className="fixed top-0 w-full px-6 py-6 md:px-12 md:py-8 flex justify-between items-center z-50 pointer-events-none">
       <TransitionLink
         href="/"
-        className="font-display font-semibold text-lg tracking-tighter pointer-events-auto cursor-pointer mix-blend-difference text-white"
+        className="pointer-events-auto cursor-pointer mix-blend-difference text-white"
       >
-        NIN
+        <span className="font-display font-semibold text-lg tracking-tighter block">NIN</span>
+        <span className="block text-[11px] font-medium uppercase tracking-[0.2em]">Network is Networth</span>
       </TransitionLink>
 
       <div className="hidden md:flex gap-8 text-[11px] font-medium uppercase tracking-[0.2em] pointer-events-auto items-center">
