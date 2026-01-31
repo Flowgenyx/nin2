@@ -50,7 +50,7 @@ export function CardStack() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="stack-section py-24 md:py-32">
+    <section ref={sectionRef} data-theme="dark" className="stack-section py-24 md:py-32">
       <div className="px-6 md:px-12 mb-20 flex justify-between items-end max-w-[1600px] mx-auto">
         <div>
           <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-4">

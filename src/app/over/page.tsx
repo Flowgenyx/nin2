@@ -111,7 +111,7 @@ export default function OverPage() {
         </section>
 
         {/* Values */}
-        <section className="py-24 px-6 md:px-12 bg-[var(--c-dark)] text-white">
+        <section data-theme="dark" className="py-24 px-6 md:px-12 bg-[var(--c-dark)] text-white">
           <div className="max-w-[1400px] mx-auto">
             <span className="block text-xs font-semibold uppercase tracking-[0.3em] text-white/40 mb-6">
               Onze Waarden

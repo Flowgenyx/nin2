@@ -38,7 +38,7 @@ export function Hero() {
   }, [isTransitioning]);
 
   return (
-    <section ref={containerRef} className="h-screen relative flex flex-col items-end justify-end overflow-hidden bg-[var(--c-bg)]">
+    <section ref={containerRef} data-theme="dark" className="h-screen relative flex flex-col items-end justify-end overflow-hidden bg-[var(--c-bg)]">
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <Image
           ref={imageRef}
