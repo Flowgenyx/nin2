@@ -37,11 +37,15 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
           opacity: 1,
           duration: 0.4,
           ease: 'power2.out',
-          onComplete: () => setIsTransitioning(false),
+          onComplete: () => {
+            setIsTransitioning(false);
+            document.body.classList.remove('transitioning');
+          },
         }
       );
     } else {
       setIsTransitioning(false);
+      document.body.classList.remove('transitioning');
     }
   }, [pathname]);
 
@@ -52,6 +56,7 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
 
       setIsTransitioning(true);
       setHasNavigated(true);
+      document.body.classList.add('transitioning');
 
       // Exit animation - opacity only, no transforms to preserve fixed positioning
       gsap.to(contentRef.current, {

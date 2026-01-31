@@ -1,7 +1,6 @@
 'use client';
 
 import { Menu } from 'lucide-react';
-import Link from 'next/link';
 import { TransitionLink } from '@/components/ui/TransitionLink';
 
 export function Navigation() {
@@ -15,21 +14,21 @@ export function Navigation() {
       </TransitionLink>
 
       <div className="hidden md:flex gap-8 text-[11px] font-medium uppercase tracking-[0.2em] pointer-events-auto">
+        <TransitionLink href="/events" className="hover:text-white/70 transition-colors duration-300">
+          Events
+        </TransitionLink>
+        <TransitionLink href="/gallery" className="hover:text-white/70 transition-colors duration-300">
+          Gallery
+        </TransitionLink>
         <TransitionLink href="/over" className="hover:text-white/70 transition-colors duration-300">
-          Over
+          Over NIN
         </TransitionLink>
-        <TransitionLink href="/programma" className="hover:text-white/70 transition-colors duration-300">
-          Programma
+        <TransitionLink href="/contact" className="hover:text-white/70 transition-colors duration-300">
+          Contact
         </TransitionLink>
-        <TransitionLink href="/sprekers" className="hover:text-white/70 transition-colors duration-300">
-          Sprekers
+        <TransitionLink href="/love2meatyou" className="hover:text-white/70 transition-colors duration-300">
+          Love2MeatYou
         </TransitionLink>
-        <TransitionLink href="/partners" className="hover:text-white/70 transition-colors duration-300">
-          Partners
-        </TransitionLink>
-        <Link href="#tickets" className="hover:text-white/70 transition-colors duration-300">
-          Tickets
-        </Link>
       </div>
 
       <button className="md:hidden pointer-events-auto">
