@@ -1,8 +1,7 @@
 'use client';
 
-import { createContext, useContext, useState, useCallback, useRef, useEffect } from 'react';
+import { createContext, useContext, useState, useRef } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { gsap } from '@/lib/gsap';
 
 interface TransitionContextType {
   isTransitioning: boolean;
@@ -14,62 +13,18 @@ interface TransitionContextType {
 const TransitionContext = createContext<TransitionContextType | null>(null);
 
 export function TransitionProvider({ children }: { children: React.ReactNode }) {
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isTransitioning] = useState(false);
   const [hasNavigated, setHasNavigated] = useState(false);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
   const pathname = usePathname();
 
-  // Entry animation when pathname changes - NO transforms to preserve fixed positioning
-  useEffect(() => {
-    const content = contentRef.current;
-    if (!content) return;
-
-    // Always ensure content is visible immediately
-    gsap.set(content, { opacity: 1 });
-
-    if (isTransitioning) {
-      // Animate in the new page (opacity only - no transforms!)
-      gsap.fromTo(
-        content,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 0.4,
-          ease: 'power2.out',
-          onComplete: () => {
-            setIsTransitioning(false);
-            document.body.classList.remove('transitioning');
-          },
-        }
-      );
-    } else {
-      setIsTransitioning(false);
-      document.body.classList.remove('transitioning');
-    }
-  }, [pathname]);
-
-  const navigateTo = useCallback(
-    (href: string) => {
-      if (isTransitioning) return;
-      if (href === pathname) return;
-
-      setIsTransitioning(true);
-      setHasNavigated(true);
-      document.body.classList.add('transitioning');
-
-      // Exit animation - opacity only, no transforms to preserve fixed positioning
-      gsap.to(contentRef.current, {
-        opacity: 0,
-        duration: 0.3,
-        ease: 'power2.inOut',
-        onComplete: () => {
-          router.push(href);
-        },
-      });
-    },
-    [isTransitioning, router, pathname]
-  );
+  const navigateTo = (href: string) => {
+    if (href === pathname) return;
+    setHasNavigated(true);
+    window.scrollTo(0, 0);
+    router.push(href);
+  };
 
   return (
     <TransitionContext.Provider value={{ isTransitioning, hasNavigated, navigateTo, contentRef }}>

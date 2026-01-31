@@ -170,15 +170,6 @@ body.loaded {
   }
 }
 
-/* Transition Wrapper - NO transforms to preserve fixed positioning of footer */
-.transition-wrapper {
-  opacity: 1;
-}
-
-/* Hide footer during page transitions to prevent flash */
-body.transitioning .footer-sticky {
-  visibility: hidden;
-}
 
 /* Footer - fixed behind content, revealed on scroll */
 .footer-sticky {
