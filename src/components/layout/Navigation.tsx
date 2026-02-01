@@ -6,9 +6,11 @@ import { TransitionLink } from '@/components/ui/TransitionLink';
 
 export function Navigation() {
   const [isOnDark, setIsOnDark] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
+  // Detect dark sections via IntersectionObserver
   useEffect(() => {
-    const darkSections = document.querySelectorAll('[data-theme="dark"]');
+    const darkSections = document.querySelectorAll('[data-theme="dark"]:not(.footer-sticky)');
     if (darkSections.length === 0) return;
 
     const activeDarkSections = new Set<Element>();
@@ -34,8 +36,23 @@ export function Navigation() {
     return () => observer.disconnect();
   }, []);
 
-  const textColor = isOnDark ? 'text-white' : 'text-[var(--c-dark)]';
-  const hoverColor = isOnDark ? 'hover:text-white/70' : 'hover:text-[var(--c-dark)]/60';
+  // Detect footer visibility via scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const wrapper = document.querySelector('.wrapper');
+      if (!wrapper) return;
+      const rect = wrapper.getBoundingClientRect();
+      setIsFooterVisible(rect.bottom < window.innerHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const onDark = isOnDark || isFooterVisible;
+
+  const textColor = onDark ? 'text-white' : 'text-[var(--c-dark)]';
+  const hoverColor = onDark ? 'hover:text-white/70' : 'hover:text-[var(--c-dark)]/60';
 
   return (
     <nav className="fixed top-0 w-full px-6 py-6 md:px-12 md:py-8 flex justify-between items-center z-50 pointer-events-none">
