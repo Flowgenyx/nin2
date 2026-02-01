@@ -77,7 +77,7 @@ export function CardStack() {
             <div className="card-inner">
               {/* Dim overlay voor scroll effect */}
               <div className="card-dim-overlay absolute inset-0 bg-black opacity-0 z-20 pointer-events-none" />
-              <div className="p-8 md:p-16 flex flex-col justify-between relative z-10 bg-[#0A0A0A]">
+              <div className="p-8 md:p-16 flex flex-col gap-8 relative z-10 bg-[#0A0A0A]">
                 <div>
                   <div className="font-display text-4xl text-white/10 mb-6">
                     {highlight.id}

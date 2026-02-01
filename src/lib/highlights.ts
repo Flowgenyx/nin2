@@ -12,7 +12,7 @@ export const highlights: Highlight[] = [
     title: 'Inspirerende Keynotes',
     subtitle: 'Leer van de beste',
     description: 'Luister naar succesverhalen en inzichten van ondernemers die het hebben gemaakt. Praktische lessen die je direct kunt toepassen in je eigen business.',
-    image: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
+    image: '/images/2.PNG',
   },
   {
     id: '02',
