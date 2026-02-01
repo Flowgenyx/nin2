@@ -8,37 +8,15 @@ import { TransitionLink } from '@/components/ui/TransitionLink';
 
 const events = [
   {
-    day: '15',
+    day: '01',
     month: 'MRT',
-    year: '2025',
+    year: '2026',
     title: 'NIN Netwerk Diner',
-    location: 'Amsterdam',
-    venue: 'Private Location',
+    location: 'Badhoevedorp',
+    venue: 'Mondi Skybar',
     description:
-      'Een intiem diner voor 30 ambitieuze ondernemers. Drie gangen, betekenisvolle gesprekken en connecties die blijven.',
+      'Een avond vol betekenisvolle connecties bij Mondi Skybar in Badhoevedorp. Vanaf 18:00 schuif je aan voor een exclusief network dinner, gevolgd door de R&Borrel vanaf 21:00. Netwerken, genieten en verbinden tot 01:00.',
     status: 'Tickets Beschikbaar' as const,
-  },
-  {
-    day: '12',
-    month: 'APR',
-    year: '2025',
-    title: 'NIN Connect',
-    location: 'Rotterdam',
-    venue: 'Hotel New York',
-    description:
-      'Ons signature netwerkevent met inspirerende sprekers en ruimte om te connecten met gelijkgestemde professionals.',
-    status: 'Tickets Beschikbaar' as const,
-  },
-  {
-    day: '21',
-    month: 'JUN',
-    year: '2025',
-    title: 'NIN Summer Edition',
-    location: 'Utrecht',
-    venue: 'Outdoor Venue',
-    description:
-      'De zomereditie van NIN. Netwerken in een ontspannen outdoor setting met drinks, bites en de juiste mensen.',
-    status: 'Coming Soon' as const,
   },
 ];
 
@@ -70,7 +48,7 @@ export default function EventsPage() {
             </div>
             <div className="md:col-span-5 flex items-end">
               <p className="text-base font-light leading-relaxed text-gray-700">
-                Onze events zijn zorgvuldig samengesteld voor ondernemers die geloven in de kracht van betekenisvolle connecties. Geen massale conferenties — maar intieme bijeenkomsten waar kwaliteit boven kwantiteit gaat.
+                Onze events zijn zorgvuldig samengesteld voor ondernemers die geloven in de kracht van betekenisvolle connecties. Geen massale conferenties, maar intieme bijeenkomsten waar kwaliteit boven kwantiteit gaat.
               </p>
             </div>
           </section>
@@ -112,7 +90,9 @@ export default function EventsPage() {
                   <div className="md:col-span-3 md:flex md:justify-end md:items-start">
                     {event.status === 'Tickets Beschikbaar' ? (
                       <a
-                        href="#"
+                        href="https://shop.weeztix.com/98f282d3-bca4-11ee-a9cb-7e126431635e/tickets?fbclid=PAdGRleAPRjYxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadNQ-13Me9BNOt4I1_f_BhZhrhNRsaCPQm6EPdQshcg8EfLNnhtMRmJREUiaw_aem_3lu3yYbRERRInudvevC07Q&shop_code=sb99tn4g&original_referer=https%3A%2F%2Fl.instagram.com%2F&event=11aac035-293f-4251-a5bf-462c4cc5bfb0"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-block px-6 py-3 bg-[var(--c-dark)] text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[var(--c-dark)]/80 transition-colors"
                       >
                         Tickets
