@@ -42,7 +42,7 @@ export function Hero() {
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <Image
           ref={imageRef}
-          src="/images/hero/hero4.png"
+          src="/images/hero/hero5.png"
           alt="NIN Hero"
           fill
           className="object-cover scale-110"
