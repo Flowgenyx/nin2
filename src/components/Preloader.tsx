@@ -19,6 +19,8 @@ export function Preloader({ onComplete }: PreloaderProps) {
     // Skip preloader if we navigated from another page (not a fresh load)
     if (hasNavigated) {
       setIsVisible(false);
+      document.body.classList.remove('loading');
+      document.body.style.opacity = '1';
       onComplete();
       return;
     }

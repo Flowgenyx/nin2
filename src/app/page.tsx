@@ -16,6 +16,7 @@ import { Philosophy } from '@/components/sections/Philosophy';
 
 export default function Home() {
   const lenisRef = useRef<Lenis | null>(null);
+  const rafIdRef = useRef<number>(0);
 
   const initLenis = useCallback(() => {
     const lenis = new Lenis({
@@ -33,10 +34,10 @@ export default function Home() {
 
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafIdRef.current = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafIdRef.current = requestAnimationFrame(raf);
 
     // Mark body as loaded
     document.body.classList.remove('loading');
@@ -45,19 +46,12 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Set initial body state
-    document.body.classList.add('loading');
-    document.body.style.opacity = '0';
-
-    // Fade in body
-    requestAnimationFrame(() => {
-      document.body.style.opacity = '1';
-    });
-
     return () => {
+      cancelAnimationFrame(rafIdRef.current);
       if (lenisRef.current) {
         lenisRef.current.destroy();
       }
+      document.body.classList.remove('loading', 'loaded');
     };
   }, []);
 

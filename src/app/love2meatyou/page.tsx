@@ -12,6 +12,7 @@ import { Love2MeatYouPreloader } from '@/components/Love2MeatYouPreloader';
 
 export default function Love2MeatYouPage() {
   const lenisRef = useRef<Lenis | null>(null);
+  const rafIdRef = useRef<number>(0);
 
   const initLenis = useCallback(() => {
     const lenis = new Lenis({
@@ -27,14 +28,15 @@ export default function Love2MeatYouPage() {
 
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafIdRef.current = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafIdRef.current = requestAnimationFrame(raf);
   }, []);
 
   useEffect(() => {
     return () => {
+      cancelAnimationFrame(rafIdRef.current);
       if (lenisRef.current) {
         lenisRef.current.destroy();
       }
