@@ -23,9 +23,9 @@ export const highlights: Highlight[] = [
   },
   {
     id: '03',
-    title: 'Intieme Setting',
-    subtitle: 'Exclusief & persoonlijk',
-    description: 'Bewust kleinschalig gehouden voor maximale impact. Een zorgvuldig samengestelde groep van gelijkgestemde professionals en ondernemers.',
-    image: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/aa5ed4de-1a7e-4bb7-b0ea-1a4c511663df_1600w.webp',
+    title: 'De Perfecte Afsluiting',
+    subtitle: 'Work hard, play hard',
+    description: 'Relaxte sfeer op prachtige locaties, waar netwerken moeiteloos voelt. En aan het einde van de avond? Een feestje om de nieuwe connecties te vieren.',
+    image: '/images/5.PNG',
   }
 ];
