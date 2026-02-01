@@ -105,13 +105,13 @@ export default function OverPage() {
               className="text-lg font-light leading-relaxed text-gray-700 space-y-6"
             >
               <p>
-                NIN is geboren uit de overtuiging dat je netwerk je grootste asset is. In een wereld waar iedereen online connected is, missen we vaak de diepgang van echte, betekenisvolle connecties.
+                NIN is ontstaan uit de overtuiging dat je netwerk je grootste asset is. In een wereld waar iedereen online connected is, missen we de diepgang van echte connecties. Wij geloven dat die ontstaan bij goed eten, een lekker borreltje en de juiste mensen om je heen.
               </p>
               <p>
-                Daarom organiseren wij regelmatig exclusieve bijeenkomsten waar ondernemers en professionals elkaar ontmoeten in een intieme setting. Geen massale conferenties, maar zorgvuldig samengestelde events waar kwaliteit boven kwantiteit gaat.
+                Daarom organiseren wij regelmatig intieme avonden waar ondernemers en professionals samenkomen in een ontspannen setting. Denk aan een mooi gedekte tafel, goede gesprekken en een relaxte vibe waar je jezelf kunt zijn.
               </p>
               <p>
-                Bij NIN geloven we dat de juiste introductie je business kan transformeren. Wij creëren de omgeving waarin die introductie kan plaatsvinden.
+                Geen naamkaartjes, geen elevator pitches. Gewoon een avond waar je met een goed glas in je hand de juiste mensen leert kennen.
               </p>
             </div>
           </div>
