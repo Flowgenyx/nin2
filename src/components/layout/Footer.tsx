@@ -49,7 +49,7 @@ export function Footer() {
     <footer ref={footerRef} className="footer-sticky">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1c6b6980-54e4-4d8c-9ff6-e09b844d7b01_3840w.webp"
+          src="/images/hero/hero4.png"
           alt="Footer Background"
           fill
           className="object-cover opacity-20 grayscale"
