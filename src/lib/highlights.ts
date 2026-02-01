@@ -18,7 +18,7 @@ export const highlights: Highlight[] = [
     id: '02',
     title: 'Exclusief Netwerken',
     subtitle: 'Quality over quantity',
-    description: 'Geen visitekaartjes uitwisselen, maar echte gesprekken. Gestructureerde netwerksessies die leiden tot waardevolle, blijvende connecties.',
+    description: 'Geen visitekaartjes uitwisselen, maar echte gesprekken onder het genot van lekker eten en drinks. Ontspannen netwerksessies die leiden tot waardevolle, blijvende connecties.',
     image: '/images/4.PNG',
   },
   {
