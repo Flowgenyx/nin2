@@ -82,9 +82,9 @@ export function Footer() {
           </div>
 
           <div className="flex gap-12 text-xs uppercase tracking-[0.2em] font-medium text-gray-400">
-            <Link href="#" className="hover:text-white transition-colors">
+            <a href="https://www.instagram.com/network_is_networth/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Instagram
-            </Link>
+            </a>
             <Link href="#" className="hover:text-white transition-colors">
               LinkedIn
             </Link>
