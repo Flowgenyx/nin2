@@ -1,12 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { TransitionLink } from '@/components/ui/TransitionLink';
 
 export function Navigation() {
   const [isOnDark, setIsOnDark] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // Detect dark sections via IntersectionObserver
   useEffect(() => {
@@ -49,47 +50,96 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   const onDark = isOnDark || isFooterVisible;
 
   const textColor = onDark ? 'text-white' : 'text-[var(--c-dark)]';
   const hoverColor = onDark ? 'hover:text-white/70' : 'hover:text-[var(--c-dark)]/60';
 
   return (
-    <nav className="fixed top-0 w-full px-6 py-6 md:px-12 md:py-8 flex justify-between items-center z-50 pointer-events-none">
-      <TransitionLink
-        href="/"
-        className={`pointer-events-auto cursor-pointer transition-colors duration-300 ${textColor}`}
-      >
-        <span className="font-display font-semibold text-lg tracking-tighter block">NIN</span>
-        <span className="block text-[11px] font-medium uppercase tracking-[0.2em]">Network is Networth</span>
-      </TransitionLink>
+    <>
+      <nav className="fixed top-0 w-full px-6 py-6 md:px-12 md:py-8 flex justify-between items-center z-50 pointer-events-none">
+        <TransitionLink
+          href="/"
+          className={`pointer-events-auto cursor-pointer transition-colors duration-300 ${menuOpen ? 'text-white' : textColor}`}
+          onClick={() => setMenuOpen(false)}
+        >
+          <span className="font-display font-semibold text-lg tracking-tighter block">NIN</span>
+          <span className="block text-[11px] font-medium uppercase tracking-[0.2em]">Network is Networth</span>
+        </TransitionLink>
 
-      <div className="hidden md:flex gap-8 text-[11px] font-medium uppercase tracking-[0.2em] pointer-events-auto items-center">
-        <div className={`flex gap-8 transition-colors duration-300 ${textColor}`}>
-          <TransitionLink href="/events" className={`${hoverColor} transition-colors duration-300`}>
-            Events
-          </TransitionLink>
-          <TransitionLink href="/gallery" className={`${hoverColor} transition-colors duration-300`}>
-            Gallery
-          </TransitionLink>
-          <TransitionLink href="/over" className={`${hoverColor} transition-colors duration-300`}>
-            Over NIN
-          </TransitionLink>
-          <TransitionLink href="/contact" className={`${hoverColor} transition-colors duration-300`}>
-            Contact
+        <div className="hidden md:flex gap-8 text-[11px] font-medium uppercase tracking-[0.2em] pointer-events-auto items-center">
+          <div className={`flex gap-8 transition-colors duration-300 ${textColor}`}>
+            <TransitionLink href="/events" className={`${hoverColor} transition-colors duration-300`}>
+              Events
+            </TransitionLink>
+            <TransitionLink href="/gallery" className={`${hoverColor} transition-colors duration-300`}>
+              Gallery
+            </TransitionLink>
+            <TransitionLink href="/over" className={`${hoverColor} transition-colors duration-300`}>
+              Over NIN
+            </TransitionLink>
+            <TransitionLink href="/contact" className={`${hoverColor} transition-colors duration-300`}>
+              Contact
+            </TransitionLink>
+          </div>
+          <TransitionLink
+            href="/love2meatyou"
+            className="text-[#8B1A1A] hover:text-[#A52525] transition-colors duration-300"
+          >
+            Love2MeatYou
           </TransitionLink>
         </div>
-        <TransitionLink
-          href="/love2meatyou"
-          className="text-[#8B1A1A] hover:text-[#A52525] transition-colors duration-300"
-        >
-          Love2MeatYou
-        </TransitionLink>
-      </div>
 
-      <button className={`md:hidden pointer-events-auto transition-colors duration-300 ${textColor}`}>
-        <Menu className="w-6 h-6" />
-      </button>
-    </nav>
+        <button
+          className={`md:hidden pointer-events-auto transition-colors duration-300 z-50 ${menuOpen ? 'text-white' : textColor}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'Menu sluiten' : 'Menu openen'}
+        >
+          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
+      <div
+        className={`fixed inset-0 z-40 bg-[#0A0A0A] flex flex-col justify-center items-center transition-all duration-500 md:hidden ${
+          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex flex-col items-center gap-8">
+          {[
+            { href: '/events', label: 'Events' },
+            { href: '/gallery', label: 'Gallery' },
+            { href: '/over', label: 'Over NIN' },
+            { href: '/contact', label: 'Contact' },
+          ].map((link) => (
+            <TransitionLink
+              key={link.href}
+              href={link.href}
+              className="font-display text-3xl tracking-tighter text-white hover:text-white/60 transition-colors duration-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </TransitionLink>
+          ))}
+          <TransitionLink
+            href="/love2meatyou"
+            className="font-display text-3xl tracking-tighter text-[#8B1A1A] hover:text-[#A52525] transition-colors duration-300"
+            onClick={() => setMenuOpen(false)}
+          >
+            Love2MeatYou
+          </TransitionLink>
+        </div>
+      </div>
+    </>
   );
 }
