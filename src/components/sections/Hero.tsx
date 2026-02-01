@@ -42,7 +42,7 @@ export function Hero() {
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <Image
           ref={imageRef}
-          src="/images/hero/hero3.png"
+          src="/images/hero/hero4.png"
           alt="NIN Hero"
           fill
           className="object-cover scale-110"
@@ -50,6 +50,7 @@ export function Hero() {
           quality={100}
           unoptimized
         />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
     </section>
