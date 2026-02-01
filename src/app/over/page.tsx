@@ -25,16 +25,23 @@ export default function OverPage() {
       return;
     }
 
+    const splitWords = (el: HTMLElement) => {
+      const text = el.innerText;
+      el.innerHTML = text.split(' ').map(word =>
+        `<span class="word-wrap"><span class="word-inner">${word}</span></span>`
+      ).join(' ');
+    };
+
     const splitAndAnimate = (element: HTMLElement) => {
-      // Skip als element al gesplit is
       if (element.querySelector('.word-wrap')) return;
 
-      const text = element.innerText;
-      element.innerHTML = text.split(' ').map(word =>
-        `<span class="word-wrap"><span class="word-inner">${word}</span></span>`
-      ).join('');
+      const paragraphs = element.querySelectorAll('p');
+      if (paragraphs.length > 0) {
+        paragraphs.forEach(p => splitWords(p));
+      } else {
+        splitWords(element);
+      }
 
-      // Force layout recalculation
       void element.offsetHeight;
 
       gsap.to(element.querySelectorAll('.word-inner'), {
