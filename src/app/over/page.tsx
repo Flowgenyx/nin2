@@ -130,9 +130,9 @@ export default function OverPage() {
             <div className="grid md:grid-cols-3 gap-12">
               <div className="border-t border-white/20 pt-8">
                 <span className="font-display text-6xl text-white/10 mb-4 block">01</span>
-                <h3 className="font-display text-xl tracking-tight mb-4">Kwaliteit boven kwantiteit</h3>
+                <h3 className="font-display text-xl tracking-tight mb-4">Gebouwd voor groei</h3>
                 <p className="text-sm font-light text-gray-400 leading-relaxed">
-                  Liever 10 waardevolle connecties dan 100 visitekaartjes. Wij selecteren zorgvuldig wie er bij onze events aanwezig is.
+                  Niet voor ondernemers die visitekaartjes komen halen, maar voor ondernemers die nadenken over hun volgende stap. NIN is waar groei begint.
                 </p>
               </div>
               <div className="border-t border-white/20 pt-8">
