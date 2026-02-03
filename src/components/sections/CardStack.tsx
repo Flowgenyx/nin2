@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { gsap, ScrollTrigger } from '@/lib/gsap';
 import { highlights } from '@/lib/highlights';
 
@@ -97,11 +98,12 @@ export function CardStack() {
                 </div>
               </div>
               <div className="relative h-full overflow-hidden order-first md:order-last">
-                <img
+                <Image
                   src={highlight.image}
                   alt={highlight.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="eager"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-black/10" />
               </div>
