@@ -54,8 +54,9 @@ export default function ContactPage() {
                     Socials
                   </span>
                   <div className="flex gap-6">
-                    <a href="#" className="text-[var(--c-dark)] hover:text-gray-600 transition-colors">Instagram</a>
+                    <a href="https://www.instagram.com/network_is_networth/" target="_blank" rel="noopener noreferrer" className="text-[var(--c-dark)] hover:text-gray-600 transition-colors">Instagram</a>
                     <a href="#" className="text-[var(--c-dark)] hover:text-gray-600 transition-colors">LinkedIn</a>
+                    <a href="https://www.tiktok.com/@networkisnetworth.nl?_r=1&_t=ZN-93dzJssP0Ok" target="_blank" rel="noopener noreferrer" className="text-[var(--c-dark)] hover:text-gray-600 transition-colors">TikTok</a>
                   </div>
                 </div>
               </div>
