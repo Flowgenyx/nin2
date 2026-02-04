@@ -102,7 +102,7 @@ export function CardStack() {
                   src={highlight.image}
                   alt={highlight.title}
                   fill
-                  className="object-cover object-top md:object-center"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-black/10" />
