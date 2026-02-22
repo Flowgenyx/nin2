@@ -91,7 +91,7 @@ export function Footer() {
             <a href="https://www.tiktok.com/@networkisnetworth.nl?_r=1&_t=ZN-93dzJssP0Ok" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               TikTok
             </a>
-            <Link href="mailto:info@nin.nl" className="hover:text-white transition-colors">
+            <Link href="mailto:Contact@networkisnetworth.nl" className="hover:text-white transition-colors">
               Contact
             </Link>
           </div>

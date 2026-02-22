@@ -45,8 +45,8 @@ export default function ContactPage() {
                   <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-1">
                     E-mail
                   </span>
-                  <a href="mailto:info@nin.nl" className="text-[var(--c-dark)] hover:text-gray-600 transition-colors">
-                    info@nin.nl
+                  <a href="mailto:Contact@networkisnetworth.nl" className="text-[var(--c-dark)] hover:text-gray-600 transition-colors">
+                    Contact@networkisnetworth.nl
                   </a>
                 </div>
                 <div>
