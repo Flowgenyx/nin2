@@ -6,6 +6,10 @@ export async function POST(request: NextRequest) {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID;
   const tableId = process.env.AIRTABLE_TABLE_ID;
+  const fieldNaam = process.env.AIRTABLE_FIELD_NAAM;
+  const fieldEmail = process.env.AIRTABLE_FIELD_EMAIL;
+  const fieldTelefoon = process.env.AIRTABLE_FIELD_TELEFOON;
+  const fieldBericht = process.env.AIRTABLE_FIELD_BERICHT;
 
   const response = await fetch(`https://api.airtable.com/v0/${baseId}/${tableId}`, {
     method: 'POST',
@@ -15,10 +19,10 @@ export async function POST(request: NextRequest) {
     },
     body: JSON.stringify({
       fields: {
-        fldZr4EDnhLaWCir3: naam,
-        fldOvj4lMaQKbhyFd: email,
-        fldESz1YlZngIk3la: telefoon,
-        flddl4ntzc6vhNcfB: bericht,
+        [fieldNaam!]: naam,
+        [fieldEmail!]: email,
+        [fieldTelefoon!]: telefoon,
+        [fieldBericht!]: bericht,
       },
     }),
   });
