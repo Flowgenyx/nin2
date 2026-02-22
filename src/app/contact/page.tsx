@@ -1,11 +1,43 @@
 'use client';
 
+import { useState } from 'react';
 import { Navigation } from '@/components/layout/Navigation';
 import { Footer } from '@/components/layout/Footer';
 import { NoiseOverlay } from '@/components/ui/NoiseOverlay';
 import { TransitionWrapper } from '@/components/layout/TransitionWrapper';
 
+type Status = 'idle' | 'loading' | 'success' | 'error';
+
 export default function ContactPage() {
+  const [naam, setNaam] = useState('');
+  const [email, setEmail] = useState('');
+  const [telefoon, setTelefoon] = useState('');
+  const [bericht, setBericht] = useState('');
+  const [status, setStatus] = useState<Status>('idle');
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ naam, email, telefoon, bericht }),
+      });
+
+      if (!res.ok) throw new Error('Verzenden mislukt');
+
+      setStatus('success');
+      setNaam('');
+      setEmail('');
+      setTelefoon('');
+      setBericht('');
+    } catch {
+      setStatus('error');
+    }
+  }
+
   return (
     <>
       <Footer />
@@ -64,62 +96,91 @@ export default function ContactPage() {
 
             {/* Right: Form */}
             <div className="md:col-span-7">
-              <form onSubmit={(e) => e.preventDefault()} className="space-y-10">
-                <div>
-                  <label htmlFor="naam" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-3">
-                    Naam
-                  </label>
-                  <input
-                    type="text"
-                    id="naam"
-                    placeholder="Je volledige naam"
-                    className="w-full bg-transparent border-0 border-b border-black/20 focus:border-black py-3 text-base font-light outline-none transition-colors duration-300 placeholder:text-gray-400"
-                  />
+              {status === 'success' ? (
+                <div className="py-16 text-center">
+                  <p className="font-display text-3xl tracking-tighter mb-4">Bericht ontvangen!</p>
+                  <p className="text-gray-500 font-light">We nemen zo snel mogelijk contact met je op.</p>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="mt-8 text-xs uppercase tracking-[0.2em] font-semibold underline underline-offset-4 hover:text-gray-500 transition-colors"
+                  >
+                    Nieuw bericht sturen
+                  </button>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-10">
+                  <div>
+                    <label htmlFor="naam" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-3">
+                      Naam
+                    </label>
+                    <input
+                      type="text"
+                      id="naam"
+                      required
+                      value={naam}
+                      onChange={(e) => setNaam(e.target.value)}
+                      placeholder="Je volledige naam"
+                      className="w-full bg-transparent border-0 border-b border-black/20 focus:border-black py-3 text-base font-light outline-none transition-colors duration-300 placeholder:text-gray-400"
+                    />
+                  </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-3">
-                    E-mail
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="je@email.nl"
-                    className="w-full bg-transparent border-0 border-b border-black/20 focus:border-black py-3 text-base font-light outline-none transition-colors duration-300 placeholder:text-gray-400"
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-3">
+                      E-mail
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="je@email.nl"
+                      className="w-full bg-transparent border-0 border-b border-black/20 focus:border-black py-3 text-base font-light outline-none transition-colors duration-300 placeholder:text-gray-400"
+                    />
+                  </div>
 
-                <div>
-                  <label htmlFor="telefoon" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-3">
-                    Telefoon
-                  </label>
-                  <input
-                    type="tel"
-                    id="telefoon"
-                    placeholder="+31 6 12345678"
-                    className="w-full bg-transparent border-0 border-b border-black/20 focus:border-black py-3 text-base font-light outline-none transition-colors duration-300 placeholder:text-gray-400"
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="telefoon" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-3">
+                      Telefoon
+                    </label>
+                    <input
+                      type="tel"
+                      id="telefoon"
+                      value={telefoon}
+                      onChange={(e) => setTelefoon(e.target.value)}
+                      placeholder="+31 6 12345678"
+                      className="w-full bg-transparent border-0 border-b border-black/20 focus:border-black py-3 text-base font-light outline-none transition-colors duration-300 placeholder:text-gray-400"
+                    />
+                  </div>
 
-                <div>
-                  <label htmlFor="bericht" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-3">
-                    Bericht
-                  </label>
-                  <textarea
-                    id="bericht"
-                    rows={4}
-                    placeholder="Waar kunnen we je mee helpen?"
-                    className="w-full bg-transparent border-0 border-b border-black/20 focus:border-black py-3 text-base font-light outline-none transition-colors duration-300 placeholder:text-gray-400 resize-none"
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="bericht" className="block text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-3">
+                      Bericht
+                    </label>
+                    <textarea
+                      id="bericht"
+                      required
+                      rows={4}
+                      value={bericht}
+                      onChange={(e) => setBericht(e.target.value)}
+                      placeholder="Waar kunnen we je mee helpen?"
+                      className="w-full bg-transparent border-0 border-b border-black/20 focus:border-black py-3 text-base font-light outline-none transition-colors duration-300 placeholder:text-gray-400 resize-none"
+                    />
+                  </div>
 
-                <button
-                  type="submit"
-                  className="inline-block px-8 py-4 bg-[var(--c-dark)] text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[var(--c-dark)]/80 transition-colors"
-                >
-                  Verstuur Bericht
-                </button>
-              </form>
+                  {status === 'error' && (
+                    <p className="text-sm text-red-500">Er ging iets mis. Probeer het opnieuw of mail ons direct.</p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="inline-block px-8 py-4 bg-[var(--c-dark)] text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[var(--c-dark)]/80 transition-colors disabled:opacity-50"
+                  >
+                    {status === 'loading' ? 'Versturen...' : 'Verstuur Bericht'}
+                  </button>
+                </form>
+              )}
             </div>
           </section>
         </main>
