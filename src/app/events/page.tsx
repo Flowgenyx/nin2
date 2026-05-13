@@ -8,14 +8,14 @@ import { TransitionLink } from '@/components/ui/TransitionLink';
 
 const events = [
   {
-    day: '01',
-    month: 'MRT',
+    day: '31',
+    month: 'MEI',
     year: '2026',
     title: 'NIN Netwerk Diner',
     location: 'Badhoevedorp',
-    venue: 'Mondi Skybar',
+    venue: 'Schipholweg 275',
     description:
-      'Een avond vol betekenisvolle connecties bij Mondi Skybar in Badhoevedorp. Vanaf 18:00 schuif je aan voor een exclusief network dinner, gevolgd door de R&Borrel vanaf 21:00. Netwerken, genieten en verbinden tot 01:00.',
+      'Een avond vol betekenisvolle connecties in Badhoevedorp. De deuren openen om 18:00, waarna om 19:00 de dinnershow van start gaat. Vanaf 21:00 zet de R&Borrel de avond voort, die tot 01:00 doorloopt. Het wordt een avond die je niet wil missen.',
     status: 'Tickets Beschikbaar' as const,
   },
 ];
@@ -90,7 +90,7 @@ export default function EventsPage() {
                   <div className="md:col-span-3 md:flex md:justify-end md:items-start">
                     {event.status === 'Tickets Beschikbaar' ? (
                       <a
-                        href="https://shop.weeztix.com/98f282d3-bca4-11ee-a9cb-7e126431635e/tickets?fbclid=PAdGRleAPRjYxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadNQ-13Me9BNOt4I1_f_BhZhrhNRsaCPQm6EPdQshcg8EfLNnhtMRmJREUiaw_aem_3lu3yYbRERRInudvevC07Q&shop_code=sb99tn4g&original_referer=https%3A%2F%2Fl.instagram.com%2F&event=11aac035-293f-4251-a5bf-462c4cc5bfb0"
+                        href="https://shop.weeztix.com/98f282d3-bca4-11ee-a9cb-7e126431635e/events?fbclid=PAdGRleAPRjYxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadNQ-13Me9BNOt4I1_f_BhZhrhNRsaCPQm6EPdQshcg8EfLNnhtMRmJREUiaw_aem_3lu3yYbRERRInudvevC07Q&shop_code=sb99tn4g&original_referer=https%3A%2F%2Fl.instagram.com%2F&event=11aac035-293f-4251-a5bf-462c4cc5bfb0"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block px-6 py-3 bg-[var(--c-dark)] text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[var(--c-dark)]/80 transition-colors"

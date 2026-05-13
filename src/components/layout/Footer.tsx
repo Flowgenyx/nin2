@@ -63,7 +63,7 @@ export function Footer() {
         </div>
 
         <a
-          href="https://shop.weeztix.com/98f282d3-bca4-11ee-a9cb-7e126431635e/tickets?fbclid=PAdGRleAPRjYxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadNQ-13Me9BNOt4I1_f_BhZhrhNRsaCPQm6EPdQshcg8EfLNnhtMRmJREUiaw_aem_3lu3yYbRERRInudvevC07Q&shop_code=sb99tn4g&original_referer=https%3A%2F%2Fl.instagram.com%2F&event=11aac035-293f-4251-a5bf-462c4cc5bfb0"
+          href="https://shop.weeztix.com/98f282d3-bca4-11ee-a9cb-7e126431635e/events?fbclid=PAdGRleAPRjYxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadNQ-13Me9BNOt4I1_f_BhZhrhNRsaCPQm6EPdQshcg8EfLNnhtMRmJREUiaw_aem_3lu3yYbRERRInudvevC07Q&shop_code=sb99tn4g&original_referer=https%3A%2F%2Fl.instagram.com%2F&event=11aac035-293f-4251-a5bf-462c4cc5bfb0"
           target="_blank"
           rel="noopener noreferrer"
           className="group block w-fit mx-auto relative overflow-hidden"
