@@ -8,14 +8,15 @@ import { TransitionLink } from '@/components/ui/TransitionLink';
 
 const events = [
   {
-    day: '31',
-    month: 'MEI',
+    day: '29',
+    month: 'NOV',
     year: '2026',
-    title: 'NIN Netwerk Diner',
-    location: 'Badhoevedorp',
-    venue: 'Schipholweg 275',
+    title: 'NIN Netwerkdiner & R&Borrel',
+    location: 'Amsterdam',
+    venue: 'The Scene Brasserie, Koivistokade 26',
     description:
-      'Een avond vol betekenisvolle connecties in Badhoevedorp. De deuren openen om 18:00, waarna om 19:00 de dinnershow van start gaat. Vanaf 21:00 zet de R&Borrel de avond voort, die tot 01:00 doorloopt. Het wordt een avond die je niet wil missen.',
+      'Een avond vol betekenisvolle connecties bij The Scene Brasserie in Amsterdam. De deuren openen om 17:00, waarna om 18:00 het netwerkdiner van start gaat. Vanaf 21:00 zet de R&Borrel de avond voort, die tot 01:00 doorloopt.',
+    dresscode: 'Business casual in rood & wit',
     status: 'Tickets Beschikbaar' as const,
   },
 ];
@@ -83,6 +84,9 @@ export default function EventsPage() {
                     </div>
                     <p className="text-base font-light leading-relaxed text-gray-600 max-w-xl">
                       {event.description}
+                    </p>
+                    <p className="text-base font-light leading-relaxed text-gray-600 max-w-xl mt-4">
+                      <span className="font-semibold">Dresscode:</span> {event.dresscode}
                     </p>
                   </div>
 
