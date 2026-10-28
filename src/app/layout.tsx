@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Manrope, Syncopate } from "next/font/google";
+import localFont from "next/font/local";
 import { TransitionProvider } from "@/context/TransitionContext";
 import "./globals.css";
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600"],
+const manrope = localFont({
+  src: "./fonts/Manrope-Variable.woff2",
+  weight: "200 600",
   variable: "--font-body",
   display: "swap",
 });
 
-const syncopate = Syncopate({
-  subsets: ["latin"],
-  weight: ["400", "700"],
+const syncopate = localFont({
+  src: [
+    { path: "./fonts/Syncopate-Regular.woff2", weight: "400" },
+    { path: "./fonts/Syncopate-Bold.woff2", weight: "700" },
+  ],
   variable: "--font-display",
   display: "swap",
 });
